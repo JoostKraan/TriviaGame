@@ -8,6 +8,7 @@ namespace Triviagamefinal
 {
     public class Answers
     {
+        
         public string Title { get; set; }
         public bool isCorrect { get; set; }
     }

@@ -37,14 +37,14 @@ namespace TriviaGame
             Console.Clear();
             Console.SetCursorPosition(85, 0);
             Console.WriteLine("Enter Age");
-            Console.SetCursorPosition(85, 5);
+            Console.SetCursorPosition(85, 2);
             Console.WriteLine($"Username = {username}");
             Console.SetCursorPosition(85, 10);
             age = Console.ReadLine();
             Console.Clear();
             Console.SetCursorPosition(85, 0);
             Console.WriteLine($"Username = {username}");
-            Console.SetCursorPosition(85, 5);
+            Console.SetCursorPosition(85, 2);
             Console.WriteLine($"Age = { age}");
             Console.SetCursorPosition(85, 10);
             Console.WriteLine("Press any key to continue....");
@@ -54,21 +54,21 @@ namespace TriviaGame
         public static void Menu()
         {
             Console.Clear();
+            Console.SetCursorPosition(0, 0);
+            Console.WriteLine($"Username : {username}" );
+            Console.SetCursorPosition(0, 2);
+            Console.WriteLine($"Age : {age}");
             Console.SetCursorPosition(85, 0);
-            Console.WriteLine("Username : " + username);
-            Console.SetCursorPosition(85, 5);
-            Console.WriteLine("Age : " + age);
-            Console.SetCursorPosition(85, 7);
             Console.WriteLine("(1: Start");
-            Console.SetCursorPosition(85, 9);
+            Console.SetCursorPosition(85, 2);
             Console.WriteLine("(2: Options");
-            Console.SetCursorPosition(85, 11);
+            Console.SetCursorPosition(85, 4);
             Console.WriteLine("(3: How to play");
-            Console.SetCursorPosition(85, 13);
-            Console.WriteLine(" (4: Exit");
-            Console.SetCursorPosition(85, 15);
+            Console.SetCursorPosition(85, 6);
+            Console.WriteLine("(4: Exit");
+            Console.SetCursorPosition(85, 8);
             Console.WriteLine("(5: Change username and age");
-            Console.SetCursorPosition(85, 17);
+            Console.SetCursorPosition(85, 10);
             Console.WriteLine("Select an option...");
 
             int option = int.Parse(Console.ReadLine());

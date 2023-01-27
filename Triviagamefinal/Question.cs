@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Triviagamefinal
 {
-    internal class Question
+    public class Question
     {
+        public List<Answers> Answers = new List<Answers>();
+        public string Name { get; set; }
+
+        public bool isCorrect;
     }
+
 }

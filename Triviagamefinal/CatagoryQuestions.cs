@@ -9,14 +9,12 @@ namespace Triviagamefinal
     public class CatagoryQuestions
     {
         public List<Question> questions;
-        public List<Question> getGeoQuestions()
+        public List<Question> GetgeoQuestions()
         {
-
             List<Question> questions = new List<Question>();
             Question vraag1 = new Question
             {
-
-                QuestionText = "Wat is de hoofdstad van Egypte?",
+                Name = "Wat is de hoofdstad van Egypte?",
                 Answers = new List<Answers> {
                     new Answers { isCorrect = false, Title = "Madrid" },
                      new Answers { isCorrect = true, Title = "Cairo" },
@@ -27,7 +25,7 @@ namespace Triviagamefinal
             
             Question vraag2 = new Question
             {
-                QuestionText = "Wat is het Kleinste land op Aarde?",
+                Name = "Wat is het Kleinste land op Aarde?",
                 Answers = new List<Answers> {
                     new Answers {isCorrect = false, Title = " Monaco"},
                     new Answers {isCorrect = true, Title = "Vaticaan Stad"},
@@ -38,7 +36,7 @@ namespace Triviagamefinal
             
             Question vraag3 = new Question
             {
-                QuestionText = "In welk land is Internet uitgevonden?",
+                Name = "In welk land is Internet uitgevonden?",
                 Answers = new List<Answers> {
                     new Answers {isCorrect = true, Title = "Verenigde Staten"},
                     new Answers {isCorrect = false, Title = "Nederland"},
@@ -49,7 +47,7 @@ namespace Triviagamefinal
             
             Question vraag4 = new Question
             {
-                QuestionText = "Wat is de oudste stad ter wereld?",
+                Name = "Wat is de oudste stad ter wereld?",
                 Answers = new List<Answers> {
                     new Answers {isCorrect = false, Title = "Damascus"},
                     new Answers {isCorrect = false, Title = "Aleppo"},
@@ -60,7 +58,7 @@ namespace Triviagamefinal
             
             Question vraag5 = new Question
             {
-                QuestionText = "Welk land heeft de meeste inwoners?",
+                Name = "Welk land heeft de meeste inwoners?",
                 Answers = new List<Answers> {
                     new Answers {isCorrect = true, Title = "China"},
                     new Answers {isCorrect = false, Title = "India"},
@@ -71,7 +69,7 @@ namespace Triviagamefinal
             
             Question vraag6 = new Question
             {
-                QuestionText = "Wat is de hoofdstad van Australie?",
+                Name = "Wat is de hoofdstad van Australie?",
                 Answers = new List<Answers> {
                     new Answers {isCorrect = false, Title = "Sydney"},
                     new Answers {isCorrect = true, Title = "Canberra"},
@@ -82,7 +80,7 @@ namespace Triviagamefinal
             
             Question vraag7 = new Question
             {
-                QuestionText = "Welke munt-eenheid gebruikt Japan?",
+                Name = "Welke munt-eenheid gebruikt Japan?",
                 Answers = new List<Answers> {
                     new Answers {isCorrect = false, Title = "Rupee"},
                     new Answers {isCorrect = false, Title = "Yuan"},
@@ -93,7 +91,7 @@ namespace Triviagamefinal
             
             Question vraag8 = new Question
             {
-                QuestionText = "Hoeveel staten heeft de Verenigde Staten?",
+                Name = "Hoeveel staten heeft de Verenigde Staten?",
                 Answers = new List<Answers> {
                     new Answers {isCorrect = false, Title = "42"},
                     new Answers {isCorrect = false, Title = "47"},
@@ -104,7 +102,7 @@ namespace Triviagamefinal
             
             Question vraag9 = new Question
             {
-                QuestionText = "Welke rivier gaat er door de Gran Canyon?",
+                Name = "Welke rivier gaat er door de Gran Canyon?",
                 Answers = new List<Answers> {
                     new Answers {isCorrect = true, Title = "Calorado River"},
                     new Answers {isCorrect = false, Title = "Mississippi River"},
@@ -115,7 +113,7 @@ namespace Triviagamefinal
            
             Question vraag10 = new Question
             {
-                QuestionText = "Wat zijn de meest gespoken talen in Canada?",
+                Name = "Wat zijn de meest gespoken talen in Canada?",
                 Answers = new List<Answers> {
                     new Answers {isCorrect = true, Title = "Spaans en Engels"},
                     new Answers {isCorrect = false, Title = "Russisch en Engels"},
@@ -134,11 +132,7 @@ namespace Triviagamefinal
             questions.Add(vraag2);
             questions.Add(vraag1);
             return new List<Question>();
-            return getGeoQuestions();
-            
-            
         }
-
-
     }
 }
+
