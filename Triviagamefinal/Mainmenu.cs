@@ -404,7 +404,7 @@ namespace TriviaGame
                             break;
 
                         default:
-                            Console.SetCursorPosition(85, 0);
+                            Console.SetCursorPosition(85, 65);
                             Console.WriteLine("There is no color associated with that number");
                             Console.Beep(590, 750);
                             break;
@@ -420,10 +420,13 @@ namespace TriviaGame
             if (option == 3)
             {
                 Console.Clear();
-                Console.WriteLine("                                                 How to play");
-                Console.WriteLine();
-                Console.WriteLine("                                                 Work in Progress...");
-                Console.WriteLine("                                                 (b: Back...");
+                Console.SetCursorPosition(85, 0);
+                Console.WriteLine("How to play");
+                Console.SetCursorPosition(85, 5);
+                Console.WriteLine("Work in Progress...");
+                Console.SetCursorPosition(85, 10);
+                Console.WriteLine("(b: Back...");
+                Console.SetCursorPosition(85, 12);
                 Console.Beep(300, 180);
                 int opt3b = char.Parse(Console.ReadLine());
                 if (opt3b == 'b')
