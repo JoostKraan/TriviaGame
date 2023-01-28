@@ -131,8 +131,9 @@ namespace Triviagamefinal
             questions.Add(vraag3);
             questions.Add(vraag2);
             questions.Add(vraag1);
-            return new List<Question>();
+            return questions;
         }
+
     }
 }
 

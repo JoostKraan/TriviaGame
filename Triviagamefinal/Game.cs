@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Linq;
+using System.Reflection;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace TriviaGame
         CatagoryQuestions geoQuest = new CatagoryQuestions();
         int lives = 3;
         int score = 0;
-        List<Question> vragenLijst = new List<Question>();
+        List<Question> questionList = new List<Question>();
         public void resetConsole()
         {
             Console.BackgroundColor = ConsoleColor.Black;
@@ -31,7 +32,7 @@ namespace TriviaGame
             Console.SetCursorPosition(85, 2);
             Console.WriteLine("- You can choose between 3 categories and one mixed category -");
             Console.SetCursorPosition(85, 4);
-            Console.WriteLine("1) Geography"); 
+            Console.WriteLine("1) Geography");
             Console.SetCursorPosition(85, 6);
             Console.WriteLine("2) C# Questions");
             Console.SetCursorPosition(85, 8);
@@ -44,34 +45,76 @@ namespace TriviaGame
             if (bTomain == 1)
             {
                 Console.Clear();
-                Play();
+                askGeoQuestions(score, lives);
+
                 Console.ReadLine();
             }
             else if (bTomain == 2)
             {
-                geoQuest.GetgeoQuestions();
+
             }
             else if (bTomain == 3)
             {
-                //getGameQuestions();
+
             }
-            void Play()
+
+            void Failed()
             {
-                vragenLijst = geoQuest.GetgeoQuestions();
+                Console.SetCursorPosition(85, 0);
+                Console.WriteLine("Seems like you dont have any lives left...");
+                Console.SetCursorPosition(85, 2);
+                Console.WriteLine("The cause of you failing will mostly have to do with you having a skill issue.");
+                Console.SetCursorPosition(85, 4);
+                Console.ReadLine();
+
+            }
+            void Results()
+            {
+                Console.SetCursorPosition(85, 0);
+                Console.WriteLine("Here we have the Results for your previous game you played.");
+                Console.SetCursorPosition(85, 2);
+                Console.WriteLine($"score : {score}");
+                Console.SetCursorPosition(85, 4);
+                Console.WriteLine($"Lives you had left : {lives}");
+                if (score < 0)
+                {
+
+                    Console.SetCursorPosition(85, 6);
+                    Console.WriteLine("You didn't get any points that game....");
+                    Console.SetCursorPosition(85, 8);
+                    Console.WriteLine("Impressive?");
+                    Console.SetCursorPosition(85, 10);
+                }
+                else if (score == 5)
+                {
+                    Console.SetCursorPosition(85, 6);
+                    Console.WriteLine("You got halfway there!");
+                    Console.SetCursorPosition(85, 8);
+                    Console.WriteLine("Thats great but you can do better.");
+                    Console.SetCursorPosition(85, 10);
+                }
+                else if (score == 10)
+                {
+                    Console.SetCursorPosition(85, 6);
+                    Console.WriteLine("That was a perfect game 10/10");
+                    Console.SetCursorPosition(85, 8);
+                    Console.WriteLine("You seem to be Extremely intelligent for answering these very difficult questions.");
+                    Console.SetCursorPosition(85, 10);
+                }
+            }
+            void askGeoQuestions(int lives, int score)
+            {
                 lives = 3;
-                askGeoQuestions();
-            }
-            void askGeoQuestions()
-            {
-                vragenLijst = geoQuest.GetgeoQuestions();
+                score = 0;
+                questionList = geoQuest.GetgeoQuestions();
                 Random rnd = new Random();
-                int questCount = vragenLijst.Count;
+                int questCount = questionList.Count;
                 for (int i = 0; i < questCount; i++)
                 {
-                    int questionIndex = rnd.Next(0, vragenLijst.Count);
-                    Question currentQuestion = vragenLijst[questionIndex];
+                    int questionIndex = rnd.Next(0, questionList.Count);
+                    Question currentQuestion = questionList[questionIndex];
                     Console.WriteLine(currentQuestion.Name);
-                    vragenLijst.Remove(currentQuestion);
+                    questionList.Remove(currentQuestion);
                     foreach (Answers antwoord in currentQuestion.Answers)
                     {
                         Console.WriteLine($"- {antwoord.Title}");
@@ -86,21 +129,28 @@ namespace TriviaGame
                                 lives--;
                                 Console.Clear();
                                 Console.SetCursorPosition(85, 0);
-                                Console.WriteLine("Antwoord is fout");
+                                Console.WriteLine("Answer is Wrong");
                                 Console.SetCursorPosition(85, 5);
+                                Console.WriteLine($"Your score is now : {score}");
+                                Console.SetCursorPosition(85, 10);
+                                Console.WriteLine($"You have {lives} Lives Left!");
                                 Console.ReadLine();
+                                Console.Clear();
                             }
                             else
                             {
-                                Console.Clear();
                                 score++;
+                                Console.Clear();
                                 Console.ForegroundColor = ConsoleColor.Blue;
                                 Console.SetCursorPosition(85, 0);
-                                Console.WriteLine("Antwoord is goed");
+                                Console.WriteLine("Answer is Correct");
                                 Console.SetCursorPosition(85, 5);
-                                Console.WriteLine($"Je Score is nu : {score}");
+                                Console.WriteLine($"Your score is now : {score}");
                                 Console.SetCursorPosition(85, 10);
+                                Console.WriteLine($"You have {lives} lives Left!");
+                                Console.SetCursorPosition(85, 15);
                                 Console.ReadLine();
+                                Console.Clear();
                             }
                         }
                     }
