@@ -12,8 +12,8 @@ namespace TriviaGame
 {
     public class Game
     {
+        GameQuestions gamequestions = new GameQuestions();  
         Program Program = new Program();
-        Program user = new Program();
         Question question = new Question();
         CatagoryQuestions geoQuest = new CatagoryQuestions();
         int lives = 3;
@@ -26,6 +26,8 @@ namespace TriviaGame
         }
         public void Start()
         {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
             Console.SetCursorPosition(85, 0);
             Console.WriteLine("- Welcome to my Trivia game! -");
@@ -34,9 +36,9 @@ namespace TriviaGame
             Console.SetCursorPosition(85, 4);
             Console.WriteLine("1) Geography");
             Console.SetCursorPosition(85, 6);
-            Console.WriteLine("2) C# Questions");
+            Console.WriteLine("2) Game questions");
             Console.SetCursorPosition(85, 8);
-            Console.WriteLine("3) Gaming related Questions");
+            Console.WriteLine("3) ");
             Console.SetCursorPosition(85, 10);
             Console.WriteLine("4) Mix");
             Console.SetCursorPosition(85, 12);
@@ -44,34 +46,38 @@ namespace TriviaGame
             int bTomain = int.Parse(Console.ReadLine());
             if (bTomain == 1)
             {
+                lives = 3;
+                score = 0;
                 Console.Clear();
-                askGeoQuestions(score, lives);
-                result();
+                askGeoQuestions();
+                result(score,lives);
             }
             else if (bTomain == 2)
             {
-
+                Console.Clear();
+                askgameQuestions();
+                result(score, lives);
             }
             else if (bTomain == 3)
             {
 
             }
         }
-        void askGeoQuestions(int lives, int score)
+        void askGeoQuestions()
         {
-            lives = 3;
-            score = 0;
             questionList = geoQuest.GetgeoQuestions();
             Random rnd = new Random();
             int questCount = questionList.Count;
             for (int i = 0; i < questCount; i++)
             {
+                Console.ForegroundColor = ConsoleColor.White;
                 int questionIndex = rnd.Next(0, questionList.Count);
                 Question currentQuestion = questionList[questionIndex];
                 Console.WriteLine(currentQuestion.Name);
                 questionList.Remove(currentQuestion);
                 foreach (Answers antwoord in currentQuestion.Answers)
                 {
+                    Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine($"- {antwoord.Title}");
                 }
                 string answer = Console.ReadLine();
@@ -79,10 +85,12 @@ namespace TriviaGame
                 {
                     if (answer == antwoord.Title)
                     {
+                        
                         if (antwoord.isCorrect == false)
                         {
                             lives--;
                             Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.SetCursorPosition(85, 0);
                             Console.WriteLine("Answer is Wrong");
                             Console.SetCursorPosition(85, 5);
@@ -103,7 +111,7 @@ namespace TriviaGame
 
                             score++;
                             Console.Clear();
-                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.ForegroundColor = ConsoleColor.Green;
                             Console.SetCursorPosition(85, 0);
                             Console.WriteLine("Answer is Correct");
                             Console.SetCursorPosition(85, 5);
@@ -118,12 +126,83 @@ namespace TriviaGame
                 }
             }
         }
-        public void result()
+        void askgameQuestions()
+        {
+            questionList = gamequestions.getGameQuestions();
+            Random rnd = new Random();
+            int questCount = questionList.Count;
+            for (int i = 0; i < questCount; i++)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                int questionIndex = rnd.Next(0, questionList.Count);
+                Question currentQuestion = questionList[questionIndex];
+                Console.WriteLine(currentQuestion.Name);
+                questionList.Remove(currentQuestion);
+                foreach (Answers antwoord in currentQuestion.Answers)
+                {
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine($"- {antwoord.Title}");
+                }
+                string answer = Console.ReadLine();
+                foreach (Answers antwoord in currentQuestion.Answers)
+                {
+                    if (answer == antwoord.Title)
+                    {
+
+                        if (antwoord.isCorrect == false)
+                        {
+                            lives--;
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.SetCursorPosition(85, 0);
+                            Console.WriteLine("Answer is Wrong");
+                            Console.SetCursorPosition(85, 5);
+                            Console.WriteLine($"Your score is now : {score}");
+                            Console.SetCursorPosition(85, 10);
+                            Console.WriteLine($"You have {lives} Lives Left!");
+                            Console.ReadLine();
+                            Console.Clear();
+
+                            if (lives == 0)
+                            {
+                                Console.WriteLine("You have no lives left. Game over.");
+                                return;
+                            }
+                        }
+                        else
+                        {
+
+                            score++;
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.SetCursorPosition(85, 0);
+                            Console.WriteLine("Answer is Correct");
+                            Console.SetCursorPosition(85, 5);
+                            Console.WriteLine($"Your score is now : {score}");
+                            Console.SetCursorPosition(85, 10);
+                            Console.WriteLine($"You have {lives} lives Left!");
+                            Console.SetCursorPosition(85, 15);
+                            Console.ReadLine();
+                            Console.Clear();
+                        }
+                    }
+                }
+            }
+        }
+        public void result(int score,int lives)
         {
             Console.Clear();
-            Console.WriteLine("Test");
+            Console.SetCursorPosition(85, 0);
+            Console.WriteLine("Results");
+            Console.SetCursorPosition(70, 5);
+            Console.WriteLine($"Score : {score}");
+            Console.SetCursorPosition(70, 7);
+            Console.WriteLine($"Lives : {lives}");
+            Console.SetCursorPosition(85, 12);
+            Console.WriteLine($"You don't seem to have any lives left");
+            Console.SetCursorPosition(85, 14);
             Console.ReadLine();
-
+            Start();
         }
     }
 }

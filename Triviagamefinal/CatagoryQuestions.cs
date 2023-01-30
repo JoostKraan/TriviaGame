@@ -27,7 +27,7 @@ namespace Triviagamefinal
             {
                 Name = "Wat is het Kleinste land op Aarde?",
                 Answers = new List<Answers> {
-                    new Answers {isCorrect = false, Title = " Monaco"},
+                    new Answers {isCorrect = false, Title = "Monaco"},
                     new Answers {isCorrect = true, Title = "Vaticaan Stad"},
                     new Answers {isCorrect = false, Title = "Nauru"},
                     new Answers {isCorrect = false, Title = "San Marino"}
