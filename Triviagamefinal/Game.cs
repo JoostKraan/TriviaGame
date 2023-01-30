@@ -46,8 +46,7 @@ namespace TriviaGame
             {
                 Console.Clear();
                 askGeoQuestions(score, lives);
-
-                Console.ReadLine();
+                result();
             }
             else if (bTomain == 2)
             {
@@ -92,9 +91,16 @@ namespace TriviaGame
                             Console.WriteLine($"You have {lives} Lives Left!");
                             Console.ReadLine();
                             Console.Clear();
+
+                            if (lives == 0)
+                            {
+                                Console.WriteLine("You have no lives left. Game over.");
+                                return;
+                            }
                         }
                         else
                         {
+
                             score++;
                             Console.Clear();
                             Console.ForegroundColor = ConsoleColor.Blue;
@@ -111,6 +117,12 @@ namespace TriviaGame
                     }
                 }
             }
+        }
+        public void result()
+        {
+            Console.Clear();
+            Console.WriteLine("Test");
+
         }
     }
 }
