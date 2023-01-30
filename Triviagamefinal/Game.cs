@@ -122,6 +122,7 @@ namespace TriviaGame
         {
             Console.Clear();
             Console.WriteLine("Test");
+            Console.ReadLine();
 
         }
     }
