@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,6 @@ namespace Triviagamefinal
                        new Answers { isCorrect = false, Title = "Kazan" }
                 }
             };
-            
             Question vraag2 = new Question
             {
                 Name = "Wat is het Kleinste land op Aarde?",
@@ -33,7 +33,6 @@ namespace Triviagamefinal
                     new Answers {isCorrect = false, Title = "San Marino"}
                 }
             };
-            
             Question vraag3 = new Question
             {
                 Name = "In welk land is Internet uitgevonden?",
@@ -44,7 +43,6 @@ namespace Triviagamefinal
                     new Answers {isCorrect = false, Title = "Frankrijk"}
                 }
             };
-            
             Question vraag4 = new Question
             {
                 Name = "Wat is de oudste stad ter wereld?",
@@ -55,7 +53,6 @@ namespace Triviagamefinal
                     new Answers {isCorrect = true, Title = "Lebanon"}
                 }
             };
-            
             Question vraag5 = new Question
             {
                 Name = "Welk land heeft de meeste inwoners?",
@@ -66,7 +63,6 @@ namespace Triviagamefinal
                     new Answers {isCorrect = false, Title = "Pakistan"}
                 }
             };
-            
             Question vraag6 = new Question
             {
                 Name = "Wat is de hoofdstad van Australie?",
@@ -77,7 +73,6 @@ namespace Triviagamefinal
                     new Answers {isCorrect = false, Title = "Brisbane"}
                 }
             };
-            
             Question vraag7 = new Question
             {
                 Name = "Welke munt-eenheid gebruikt Japan?",
@@ -88,7 +83,6 @@ namespace Triviagamefinal
                     new Answers {isCorrect = false, Title = "Dong"}
                 }
             };
-            
             Question vraag8 = new Question
             {
                 Name = "Hoeveel staten heeft de Verenigde Staten?",
@@ -99,7 +93,6 @@ namespace Triviagamefinal
                     new Answers {isCorrect = false, Title = "36"}
                 }
             };
-            
             Question vraag9 = new Question
             {
                 Name = "Welke rivier gaat er door de Gran Canyon?",
@@ -110,7 +103,6 @@ namespace Triviagamefinal
                     new Answers {isCorrect = false, Title = "Yukon River"}
                 }
             };
-           
             Question vraag10 = new Question
             {
                 Name = "Wat zijn de meest gespoken talen in Canada?",
@@ -133,7 +125,6 @@ namespace Triviagamefinal
             questions.Add(vraag1);
             return questions;
         }
-
     }
 }
 

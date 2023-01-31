@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,7 +69,7 @@ namespace Triviagamefinal
                 Answers = new List<Answers> {
                     new Answers {isCorrect = false, Title = "700 Million"},
                     new Answers {isCorrect = false, Title = "300 Billion"},
-                    new Answers {isCorrect = true, Title = "1700 Trillion"},
+                    new Answers {isCorrect = true, Title = "1700 Billion"},
                     new Answers {isCorrect = false, Title = "2 Trillion"}
                 }
             };
@@ -89,7 +90,7 @@ namespace Triviagamefinal
                     new Answers {isCorrect = false, Title = "2025"},
                     new Answers {isCorrect = false, Title = "2028"},
                     new Answers {isCorrect = false, Title = "2024"},
-                    new Answers {isCorrect = true, Title = "f̸̙̹͙͕̻͖̾̐̓̊̃̈́̎̀͘͜ͅd̸̢̛͔͈̦̻̄̀̕͘͠f̷͇̌̏͛d̸͉͓̈́̆̐͊̈͑̄̉̽̄̈̾͝͠f̴̛̞̞͆͑͂́͑̉̎̿̕d̸̮̫͖͖̉͘f̵̦̟͈̮͇͆͌̾̽̊͜͠ͅd̶̢̢̜̞̲̜͖̰̦̭̫̓̏̋͊̎̌̈͂̽͜͝f̴̢̢̳̪̮̬̰̤̘̬̼̲̠̰͖̑̉̋̈͐̏͛͘͘d̴̫̠͛͂͐͒̄̉̈́́̈́̐͗͑͜"}
+                    new Answers {isCorrect = true, Title = "????"}
                 }
             };
             Question vraag9 = new Question
@@ -124,7 +125,6 @@ namespace Triviagamefinal
             questions.Add(vraag1);
             return questions;
         }
-
     }
 }
 

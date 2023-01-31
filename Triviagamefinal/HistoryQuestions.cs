@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,6 @@ namespace Triviagamefinal
                        new Answers { isCorrect = false, Title = "1914-1915" }
                 }
             };
-
             Question vraag2 = new Question
             {
                 Name = "Who built the great wall in China",
@@ -33,7 +33,6 @@ namespace Triviagamefinal
                     new Answers {isCorrect = true, Title = "The Chinese"}
                 }
             };
-
             Question vraag3 = new Question
             {
                 Name = "Who led the French Revolution?",
@@ -55,7 +54,6 @@ namespace Triviagamefinal
                     new Answers {isCorrect = false, Title = "1968"}
                 }
             };
-
             Question vraag5 = new Question
             {
                 Name = "Who was the 5th president of America",
@@ -66,7 +64,6 @@ namespace Triviagamefinal
                     new Answers {isCorrect = false, Title = "Harry S. Truman"}
                 }
             };
-
             Question vraag6 = new Question
             {
                 Name = "Who discovered America?",
@@ -77,7 +74,6 @@ namespace Triviagamefinal
                     new Answers {isCorrect = true, Title = "Amerigo Vespucci"}
                 }
             };
-
             Question vraag7 = new Question
             {
                 Name = "What was the Great Depression?",
@@ -88,7 +84,6 @@ namespace Triviagamefinal
                     new Answers {isCorrect = false, Title = "Homework"}
                 }
             };
-
             Question vraag8 = new Question
             {
                 Name = "How many kings and queens were before Willem Alexander",
@@ -99,26 +94,24 @@ namespace Triviagamefinal
                     new Answers {isCorrect = false, Title = "12"}
                 }
             };
-
             Question vraag9 = new Question
             {
-                Name = "Welke rivier gaat er door de Gran Canyon?",
+                Name = "In what time period did the Black Death take place?",
                 Answers = new List<Answers> {
-                    new Answers {isCorrect = true, Title = "Calorado River"},
-                    new Answers {isCorrect = false, Title = "Mississippi River"},
-                    new Answers {isCorrect = false, Title = "Hudson River"},
-                    new Answers {isCorrect = false, Title = "Yukon River"}
+                    new Answers {isCorrect = false, Title = "1822-1840"},
+                    new Answers {isCorrect = true, Title = "1346-1352"},
+                    new Answers {isCorrect = false, Title = "1562-1570"},
+                    new Answers {isCorrect = false, Title = "1744-1783"}
                 }
             };
-
             Question vraag10 = new Question
             {
-                Name = "Wat zijn de meest gespoken talen in Canada?",
+                Name = "What was the name of the first President of America?",
                 Answers = new List<Answers> {
-                    new Answers {isCorrect = true, Title = "Spaans en Engels"},
-                    new Answers {isCorrect = false, Title = "Russisch en Engels"},
-                    new Answers {isCorrect = false, Title = "Frans en Engels"},
-                    new Answers {isCorrect = false, Title = "Manderijns en Engels"}
+                    new Answers {isCorrect = false, Title = "Martin Van Buren."},
+                    new Answers {isCorrect = false, Title = "Thomas Edison"},
+                    new Answers {isCorrect = true, Title = "George Washington"}, 
+                    new Answers {isCorrect = false, Title = "John Adams"}
                 }
             };
             questions.Add(vraag10);
@@ -133,7 +126,6 @@ namespace Triviagamefinal
             questions.Add(vraag1);
             return questions;
         }
-
     }
 }
 
