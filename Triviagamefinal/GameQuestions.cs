@@ -60,7 +60,7 @@ namespace Triviagamefinal
                     new Answers {isCorrect = false, Title = "Russia"},
                     new Answers {isCorrect = false, Title = "America"},
                     new Answers {isCorrect = false, Title = "United Kingdom"},
-                    new Answers {isCorrect = true, Title = "Europe"}
+                    new Answers {isCorrect = true, Title = "Asia"}
                 }
             };
             Question vraag6 = new Question

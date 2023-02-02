@@ -105,7 +105,7 @@ namespace Triviagamefinal
             };
             Question vraag10 = new Question
             {
-                Name = "Wat zijn de meest gespoken talen in Canada?",
+                Name = "Wat zijn de meest gesproken talen in Canada?",
                 Answers = new List<Answers> {
                     new Answers {isCorrect = true, Title = "Spaans en Engels"},
                     new Answers {isCorrect = false, Title = "Russisch en Engels"},

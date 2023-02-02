@@ -16,6 +16,8 @@ namespace TriviaGame
         Program Program = new Program();
         Question question = new Question();
         CatagoryQuestions geoQuest = new CatagoryQuestions();
+        GameQuestions gameQuestions = new GameQuestions();  
+        HistoryQuestions historyQuestions = new HistoryQuestions(); 
         int lives = 3;
         int score = 0;
         List<Question> questionList = new List<Question>();
@@ -44,24 +46,21 @@ namespace TriviaGame
             int bTomain = int.Parse(Console.ReadLine());
             if (bTomain == 1)
             {
-                lives = 3;
-                score = 0;
+              
                 Console.Clear();
                 askGeoQuestions();
                 result(score,lives);
             }
             else if (bTomain == 2)
             {
-                lives = 3;
-                score = 0;
+              
                 Console.Clear();
                 askgameQuestions();
                 result(score, lives);
             }
             else if (bTomain == 3)
             {
-                lives = 3;
-                score = 0;
+               
                 Console.Clear();
                 askHistoryQuestions();
                 result(score,lives);
@@ -73,6 +72,8 @@ namespace TriviaGame
         }
         void askGeoQuestions()
         {
+            lives = 3;
+            score = 0;
             questionList = geoQuest.GetgeoQuestions();
             Random rnd = new Random();
             int questCount = questionList.Count;
@@ -89,6 +90,7 @@ namespace TriviaGame
                     Console.WriteLine($"- {antwoord.Title}");
                 }
                 string answer = Console.ReadLine();
+                
                 foreach (Answers antwoord in currentQuestion.Answers)
                 {
                     if (answer == antwoord.Title)
@@ -145,6 +147,8 @@ namespace TriviaGame
         }
         void askgameQuestions()
         {
+            lives = 3;
+            score = 0;
             questionList = gamequestions.getGameQuestions();
             Random rnd = new Random();
             int questCount = questionList.Count;
@@ -215,7 +219,9 @@ namespace TriviaGame
         }
         void askHistoryQuestions()
         {
-            questionList = geoQuest.GetgeoQuestions();
+            lives = 3;
+            score = 0;
+            questionList = historyQuestions.GetHistoryQuestions();
             Random rnd = new Random();
             int questCount = questionList.Count;
             for (int i = 0; i < questCount; i++)
